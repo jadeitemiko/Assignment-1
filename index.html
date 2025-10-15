@@ -29,13 +29,30 @@
   <div class="pale-line"></div>
 </header>
 
-<!-- MAIN - skall förändras -->
+<!-- MAIN - huvudinnehållet -->
 <main>
-    <h2>Huvuddinnehåll</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Praesent cursus nulla sem, id efficitur libero tempor sed.
-    Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam sit amet dapibus nibh. Pellentesque mauris arcu, pretium id scelerisque sed, scelerisque at eros. Nullam tempor diam at velit commodo, vitae pulvinar ex eleifend. Etiam nec tristique eros. Sed egestas eu sem non laoreet. Phasellus scelerisque convallis consectetur. Aliquam bibendum lorem at leo fringilla tempus ut accumsan lorem. Pellentesque non risus suscipit, scelerisque tellus vitae, ultrices ex. Maecenas consectetur rhoncus nisi, in porta velit suscipit ac. Mauris et fringilla magna. Mauris in congue libero, in semper magna. Maecenas posuere rhoncus dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Maecenas vel neque eget massa dapibus faucibus.</p>
+    <h2>Prologue: Ready for adventure?</h2>
+<div class="oracle"><img src="img/witch.png" alt="The Oracle" class="game-icon">
+  Welcome adventurer. I am <span class="main">the Oracle</span>. The stars have told me that you might be the
+  <span class="main">The Hero of Prophecy</span>.
+  <p>Our world needs you. Monsters have always roamed the deep woods and caves,
+  but now encroach on defenceless villages. If you are the one chosen by the stars, begin your jorney to save the world.</p>
+</div>
+  <div class="divider"><img src="img/smoke.png" alt="Divider" class="game-icon"></div>
+  <div id="input-player">
+    <form id="setupGame">
+      <label for="playerName">What is your name?</label><br>
+      <input type="text" id="playerName" name="playerName" placeholder="Adventure name" required>
+      <p></p>
+      <label for="playerAge">How old are you?</label><br>
+      <input type="text" id="playerAge" name="playerAge" min="1" max="999" placeholder="e.g. 12"
+             inputmode="numeric"  pattern="[0-9]{1,3}" maxlength="3" required><br>
+      <p></p>
+      <input type="submit" value="Start game">
+    </form>
+  </div>
+<div class="output-dynamic" id="game-output">
+</div>
 </main>
 
 <!-- FOOTER innehåller lite information -->
@@ -44,8 +61,7 @@
   <div class="center-text">Content created by G. Gomez, 2025 as part of
     class project for YH-course "Digital Analytics" at
     <a href="https://medieinstitutet.se/utbildningar/digital-analytics/" target="_blank">Medieinstitutet</a>
-    </p>
-    <a href="credits.html">Attributions / Credits</a></div>
+    <p><a href="credits.html">Attributions / Credits</a></p></div>
 </footer>
 <script src="js/app.js"></script>
 </body>
