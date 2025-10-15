@@ -63,7 +63,7 @@ textarea {
 Ordning på CSS
 1. Generella definitioner, färger mm
 2. Header
-3. Main
+3. Main - ink oraklets ruta
 4. Footer
 5. Bilder
 */
@@ -175,6 +175,29 @@ main {
     height: 4px;
 }
 
+/* ===
+MAIN CONTENT
+=== */
+
+.oracle-box {
+  padding-top: 15px;
+}
+
+.oracle-style {
+  border: 2px solid var(--color-secondary);
+  padding: 10px;
+  margin-top: 8px;
+  font-family: var(--font-retro);
+  font-size: 0.85rem;
+  line-height: 1.1;
+  background-color: var(--color-primary-darker);
+}
+
+/* ===
+FOOTER
+===
+ */
+
 .primary-footer {
     width:100%;
     background-color: var(--color-base);
@@ -191,7 +214,9 @@ main {
     font-family: sans-serif;
 }
 
-/* alla bilder */
+/* ===
+alla bilder
+=== */
 
 .game-icon {
   width: 30px;
@@ -215,19 +240,6 @@ main {
 .divider {
   text-align: center;
   margin: 20px 0;
-}
-.oracle-box {
-  padding-top: 15px;
-}
-
-.oracle-style {
-  border: 2px solid var(--color-secondary);
-  padding: 10px;
-  margin-top: 8px;
-  font-family: var(--font-family-retro);
-  font-size: 0.85rem;
-  line-height: 1.1;
-  background-color: var(--color-primary-darker);
 }
 
 .large-icon {

@@ -7,7 +7,7 @@ SCENE 1.1
 Prologue: Ready for adventure?
 === */
 
-//definiera konstanter som används för namn och ålderskontroll
+//definiera lokala konstanter som används för namn och ålderskontroll
 const setupForm = document.getElementById("setupGame");
 const nameInput = document.getElementById("playerName");
 const ageInput = document.getElementById("playerAge");
