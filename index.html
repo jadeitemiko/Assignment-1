@@ -6,53 +6,53 @@
     <title></title>
     <link rel="stylesheet" href="css/style.css">
     <meta name="description" content="Assignement 1">
-
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <meta property="og:image:alt" content="">
-
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" href="icon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="icon.png">
 </head>
+<style>
+  /* ANVÄND INLINE CSS PGA ENDAST DENNA SIDA */
+  main {
+    position: relative;
+    padding-top: 64px;
+  }
+  .splash-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color:yellow;
+    border-width:5px;
+    border-radius:10% / 50%;
+  }
+  .splash-button a {
+    text-decoration: none;
+    display: block;
+    padding: 20px 40px;
+    font-size:1.8rem;
+    font-weight:bolder;
+  }
+</style>
+
 <body>
 <!-- HEADER - skall ligga still -->
 <header class="primary-header fixed-top">
-  <div class="container">
-    <h1>A Small Adventure</h1>
-  </div>
-  <div class="navigation">
-    <a href="index.html" class="nav-link">Home</a>
+  <div class="justified">
+    <img id="logo-img" src="img/logotxt.png" alt="A Small Adventure Logo">
+    <h1 id="scene-title">A Small Adventure</h1>
+    <div id="player-stats"></div>
+    <div class="navigation"><a href="game.html" class="nav-link">Home</a></div>
   </div>
   <div class="pale-line"></div>
 </header>
 
 <!-- MAIN - huvudinnehållet -->
 <main>
-    <h2>Prologue: Ready for adventure?</h2>
-<div class="oracle"><img src="img/witch.png" alt="The Oracle" class="game-icon">
-  Welcome adventurer. I am <span class="main">the Oracle</span>. The stars have told me that you might be the
-  <span class="main">The Hero of Prophecy</span>.
-  <p>Our world needs you. Monsters have always roamed the deep woods and caves,
-  but now encroach on defenceless villages. If you are the one chosen by the stars, begin your jorney to save the world.</p>
-</div>
-  <div class="divider"><img src="img/smoke.png" alt="Divider" class="game-icon"></div>
-  <div id="input-player">
-    <form id="setupGame">
-      <label for="playerName">What is your name?</label><br>
-      <input type="text" id="playerName" name="playerName" placeholder="Adventure name" required>
-      <p></p>
-      <label for="playerAge">How old are you?</label><br>
-      <input type="text" id="playerAge" name="playerAge" min="1" max="999" placeholder="e.g. 12"
-             inputmode="numeric"  pattern="[0-9]{1,3}" maxlength="3" required><br>
-      <p></p>
-      <input type="submit" value="Start game">
-    </form>
-  </div>
-<div class="output-dynamic" id="game-output">
-</div>
+  <img src="img/gamelogo.jpg" alt="Welcome to A Small Adventure" width="900px">
+  <button class="splash-button">
+    <a href="game.html">START GAME</a>
+  </button>
 </main>
 
 <!-- FOOTER innehåller lite information -->

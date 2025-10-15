@@ -59,7 +59,16 @@ textarea {
 /* ==========================================================================
    MINA EGNA CSS INSTÄLLNINGAR
    ========================================================================== */
+/*
+Ordning på CSS
+1. Generella definitioner, färger mm
+2. Header
+3. Main
+4. Footer
+5. Bilder
+*/
 
+/*definiera alla färger här */
 :root {
     --color-primary: #002f5f;
     --color-primary-darker: #00264c;
@@ -71,48 +80,43 @@ textarea {
     --color-su-complementary: #33587f;
     --color-base: #4b4b4b;
     --color-text-hover: #9bb2ce;
-    --font-family-plain: TheSansB2-Plain, Verdana, sans-serif;
-    --font-family-bolded: TheSansC5-SemiBoldWeb, Verdana,
-    sans-serif;
+    --font-reg: TheSansB2-Plain, Verdana, sans-serif;
+    --font-retro:'Courier New', Courier, monospace;
 }
 
 a {
     color: inherit;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-reg);
+}
+
+.note {
+ font-weight:bold;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family:sans-serif;
     background-color: var(--color-primary-darkest);
 }
 
 main {
-    padding-top: 64px;
-    background-color: var(--color-su-complementary);
-    color: var(--color-lightest);
-    font-family: var(--font-family-plain);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    min-height: calc(100vh - 104px);
+  padding-top: 64px;
+  background-color: var(--color-su-complementary);
+  color: var(--color-lightest);
+  font-family: var(--font-reg);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  min-height: calc(100vh - 104px);
 }
 
-main span {
-    font-family: var(--font-family-bolded);
-    font-weight: bold;
-}
-
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-
-}
+/* header-relaterad kod */
 .fixed-top {
     position: fixed;
     top: 0;
@@ -121,30 +125,23 @@ main span {
     z-index: 1030;
 }
 
-#top-spacer {
-    width: 100%;
-    height: 54px;
-}
-
 .primary-header {
-    background-color: var(--color-primary);
-    color: var(--color-lightest);
-    width: 100%;
-    font-family: var(--font-family-plain);
-    display: flex;
-    flex-direction: column;
+  background-color: var(--color-primary);
+  color: var(--color-lightest);
+  width: 100%;
+  font-family: var(--font-reg);
 }
 
-.primary-header .container {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    min-height: 56px;
+.justified {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* avstånd mellan olika element */
+  padding: 10px 20px;
 }
 
 .primary-header h1 {
-    margin-top: 0;
-    margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: 1.8rem;
 }
 
@@ -162,14 +159,14 @@ main span {
   align-items: center;
   margin: 0;
   padding: 0;
-  margin-left: auto;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-main h2, main h3 {
-    color: var(--color-lightest);
-    font-family: var(--font-family-plain);
+#scene-title {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
 }
 
 .pale-line {
@@ -178,18 +175,13 @@ main h2, main h3 {
     height: 4px;
 }
 
-.primary-header .pale-line {
-    align-self: stretch;
-    flex-shrink: 0;
-}
-
 .primary-footer {
     width:100%;
     background-color: var(--color-base);
     color: var(--color-lightest);
     padding-bottom: 0.75rem;
     padding-top: 0px;
-    font-family: var(--font-family-plain);
+    font-family: var(--font-reg);
 }
 
 .primary-footer .center-text {
@@ -198,6 +190,8 @@ main h2, main h3 {
     font-size: small;
     font-family: sans-serif;
 }
+
+/* alla bilder */
 
 .game-icon {
   width: 30px;
@@ -213,11 +207,36 @@ main h2, main h3 {
   vertical-align: middle;
 }
 
+#logo-img {
+  height: 60px;
+  width: auto;
+}
+
 .divider {
   text-align: center;
   margin: 20px 0;
 }
+.oracle-box {
+  padding-top: 15px;
+}
 
+.oracle-style {
+  border: 2px solid var(--color-secondary);
+  padding: 10px;
+  margin-top: 8px;
+  font-family: var(--font-family-retro);
+  font-size: 0.85rem;
+  line-height: 1.1;
+  background-color: var(--color-primary-darker);
+}
+
+.large-icon {
+  width: 100px;
+  height: auto;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

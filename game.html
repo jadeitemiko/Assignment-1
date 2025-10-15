@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Assignement 1">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="icon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+<!-- HEADER - skall ligga still -->
+<header class="primary-header fixed-top">
+  <div class="justified">
+  <img id="logo-img" src="img/logotxt.png" alt="A Small Adventure Logo">
+    <h1 id="scene-title">A Small Adventure - 1. Prologue</h1>
+  <div id="player-stats"></div>
+  <div class="navigation"><a href="game.html" class="nav-link">Home</a></div>
+  </div>
+  <div class="pale-line"></div>
+</header>
+
+<!-- MAIN - huvudinnehållet -->
+<main>
+  <h2 id="stage-title">1.1 Ready for Adventure?</h2>
+  <div class="oracle-box">
+    <div id="oracle-text" class="oracle-style">
+      <img src="img/witch.png" alt="The Oracle" class="large-icon">
+      <p>Welcome adventurer. I am <span class="note">the Oracle</span>.</p>
+        <p>The stars have told me that you might be the <span class="note">The Hero of Prophecy</span>.</p>
+        <p>Our world needs you. Monsters have always roamed the deep woods and caves, but now encroach on defenceless villages. If you are the one chosen by the stars, begin your jorney to save the world.</p>
+      </div>
+    </div>
+  </div>
+  <div class="divider"><img src="img/smoke.png" alt="Divider" class="game-icon"></div>
+<div id="game-content">
+  <div id="input-player">
+    <form id="setupGame">
+      <label for="playerName">What is your name?</label><br>
+      <input type="text" id="playerName" name="playerName" placeholder="Adventure name" required>
+      <p></p>
+      <label for="playerAge">How old are you?</label><br>
+      <input type="text" id="playerAge" name="playerAge" min="1" max="999" placeholder="e.g. 12"
+             inputmode="numeric"  pattern="[0-9]{1,3}" maxlength="3" required><br>
+      <p></p>
+      <input type="submit" value="Begin adventure">
+    </form>
+  </div>
+  <div class="output-dynamic" id="game-output">
+  </div>
+</div>
+</main>
+
+<!-- FOOTER innehåller lite information -->
+<footer class="primary-footer">
+  <div class="pale-line"></div>
+  <div class="center-text">Content created by G. Gomez, 2025 as part of
+    class project for YH-course "Digital Analytics" at
+    <a href="https://medieinstitutet.se/utbildningar/digital-analytics/" target="_blank">Medieinstitutet</a>
+    <p><a href="credits.html">Attributions / Credits</a></p></div>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
