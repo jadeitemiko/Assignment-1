@@ -10,30 +10,6 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
-html {
-    color: #222;
-    font-size: 62.5%;
-    line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
 /*
  * A better looking default horizontal rule
  */
@@ -81,79 +57,121 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   MINA EGNA CSS INSTÄLLNINGAR
    ========================================================================== */
 
-body {
-    background-color: #FFDBCF;
+:root {
+    --color-primary: #002f5f;
+    --color-primary-darker: #00264c;
+    --color-primary-darkest: #00102c;
+    --color-secondary: #acdee6;
+    --color-secondary-light: #c4e8ed;
+    --color-lightest: #eef9fa;
+    --color-primary-darker-trans-80: rgba(0, 38, 76, 0.8);
+    --color-su-complementary: #33587f;
+    --color-base: #4b4b4b;
+    --color-text-hover: #9bb2ce;
+    --font-family-plain: TheSansB2-Plain, Verdana, sans-serif;
+    --font-family-bolded: TheSansC5-SemiBoldWeb, Verdana,
+    sans-serif;
 }
 
 a {
     color: inherit;
 }
 
-img {
-    border:0;
-    max-width: 100%;
-    height: auto;
+body {
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+    background-color: var(--color-primary-darkest);
 }
 
-.focus {
-
+main {
+    padding-top: 64px;
+    background-color: var(--color-su-complementary);
+    color: var(--color-lightest);
+    font-family: var(--font-family-plain);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    min-height: calc(100vh - 104px);
 }
 
-.centered-container { /* yttermåtten som ärvs av de andra typerna av containers */
-    max-width:70%;
-    min-height:3rem;
-    padding:1.5rem;
-    margin:1.5rem auto;
-}
-
-.fokus {
-    border-color: #0B4D42;
-    border-width: 1.5rem;
-    border-style: solid;
-    padding:2.5rem;
-    text-align:left;
-    font: 1.6rem/1.1 Calibri, Arial, sans-serif;
-}
-
-.footer {
-    font-size: 0.9rem;
-    font-family: Tahoma, sans-serif;
-    padding:1.5rem;
-    min-height:2rem;
-    text-align:center;
-    margin:1.5rem auto;
-    background-color:#D0D4B2;
-    max-width:50%;
-}
-
-.offset-container {
-    text-align:right;
-}
-
-h1, h2 {
-    color: #9E2351;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-h1 {
-    font: bold 2.2rem/1.2 Calibri, Arial, sans-serif;
-}
-
-h2 {
-    font: italic 1.8rem/1.2 Times New Roman, serif;
-}
-
-p {
-    font-family: sans-serif;
-    color: #40262F;
-}
-
-em {
+main span {
+    font-family: var(--font-family-bolded);
     font-weight: bold;
-    color: #050917;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+#top-spacer {
+    width: 100%;
+    height: 54px;
+}
+
+.primary-header {
+    background-color: var(--color-primary);
+    color: var(--color-lightest);
+    width: 100%;
+    font-family: var(--font-family-plain);
+    display: flex;
+    flex-direction: column;
+}
+
+.primary-header .container {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    min-height: 56px;
+}
+
+.primary-header h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pale-line {
+    background-color: var(--color-secondary-light);
+    width: 100%;
+    height: 4px;
+}
+
+.primary-header .pale-line {
+    align-self: stretch;
+    flex-shrink: 0;
+}
+
+.primary-footer {
+    width:100%;
+    background-color: var(--color-base);
+    color: var(--color-lightest);
+    padding-bottom: 0.75rem;
+    padding-top: 0px;
+    font-family: var(--font-family-plain);
+}
+
+.primary-footer .center-text {
+    padding-top: 1rem;
+    text-align: center;
+    font-size: small;
+    font-family: sans-serif;
 }
 
 /* ==========================================================================
