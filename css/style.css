@@ -145,6 +145,31 @@ main span {
 .primary-header h1 {
     margin-top: 0;
     margin-bottom: 0;
+  font-size: 1.8rem;
+}
+
+.primary-header .nav-link {
+  text-decoration: none;
+  padding-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  top: -10px;
+}
+
+.primary-header .navigation {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+main h2, main h3 {
+    color: var(--color-lightest);
+    font-family: var(--font-family-bolded);
 }
 
 .pale-line {
