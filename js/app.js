@@ -1,8 +1,10 @@
 //globala variabler som skall sparas genom spelet
 let playerName = "";
 let playerAge = 0;
+let playerLevel = 1;
 let currentScene = '1.1';
-//spelaren anger namn och ålder, currentScene kollar var i spelet man befinner sig
+//spelaren anger namn, ålder
+// level startar alla på 1, currentScene kollar var i spelet man befinner sig
 
 //Spelets MANUS - bör flyttas till separat fil längre fram och anropas via json
 const gameScenes = {
@@ -71,6 +73,21 @@ function setInnerHTML(elementId, content) {
   }
 }
 
+//Uppdaterar ruta i headern med spelarens aktuella namn och level
+//visas först när spelaren angett namn
+function renderPlayerStats() {
+  const statsContainer = document.getElementById("player-stats");
+
+  if (playerName && playerName.length > 0) {
+    const statsHTML = `
+            <div class="player-stats-box">
+                ${playerName}, Level ${playerLevel}
+            </div>
+        `;
+    setInnerHTML('player-stats', statsHTML);
+  }
+}
+
 //setupEventListeners skapa knappar (lyssnare) efter att en scen laddas
 function setupEventListeners() {
   if (currentScene === '1.2') {
@@ -110,6 +127,7 @@ function updateScene(sceneId) {
 
   setInnerHTML('game-output', dynamicContent);
   setInnerHTML('input-player', '');
+  renderPlayerStats();
   setupEventListeners();
 }
 
