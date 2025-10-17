@@ -1,6 +1,7 @@
 # Assignment-1
 inlämningsuppgift DAN25S - Skriptspråk och databashantering, 60 yhp
 Påbörjat minispel med html, css och javascript
+Sidan är live på https://asmalladventure.netlify.app/
 
 ## Innehållsförteckning
 - Interaktion mellan HTML, CSS och JS
