@@ -172,7 +172,7 @@ setupForm.addEventListener("submit", function(event) {
     }
     resultHTML += "As you turn " + playerAge + ", you är ready for adventure!";
   } else {
-    resultHTML += "Welcome, " + playerName + "! At " + playerAge + " years old, you are ready for adventure!";
+    resultHTML += "Welcome, " + playerName + "! At " + playerAge + " years old, you are ready for adventure!<br><br>You leave your house and pet a cute kitty, before you make your way over to the village.<br><br> <img src='img/kitty.png' alt='A friendly cat' class='large-icon'>";
   }
   //skriv ut resultatet av ålderskontroll alt. träning
   resultHTML += "<br><br><button id='continueBtn'>Continue</button>";
