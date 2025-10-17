@@ -100,7 +100,7 @@ function setEventListeners() {
     const continueBtn = document.getElementById('continueBtn');
     if (continueBtn) {
       continueBtn.addEventListener('click', () => {
-        alert("Load next scene (1.3).");
+        alert("Load next scene (1.3). - [här tar spelet slut just nu]");
       });
     }
   }
