@@ -1,4 +1,15 @@
-//globala variabler som skall sparas genom spelet
+/*
+SPELMOTOR
+1. Definiera globala variabler
+2. Spelets manus
+3. input från DOM: variabler setupForm, nameInput, ageInput
+4. återanvändbara verktyg: setInnerHTML, fillPlayerStats, förbereder DOM-output
+5. dynamiska knappar: setEventListener (continue-knapp till rätt scen)
+6. Central spellogik: updateScene tar spelaren genom manuset
+7. Starta körning, DOM-output. Hindrar också script innan formuläret laddats
+*/
+
+// globala variabler som skall sparas genom spelet
 let playerName = "";
 let playerAge = 0;
 let playerLevel = 1;
@@ -54,15 +65,12 @@ const gameScenes = {
   },
 };
 
-
-//definiera lokala konstanter som används för DOM-element (namn och ålderkoll)
+//definiera lokala variabler som används för namn och ålderkoll (DOM-element)
 const setupForm = document.getElementById("setupGame");
 const nameInput = document.getElementById("playerName");
 const ageInput = document.getElementById("playerAge");
-const mainContent = document.getElementById("input-player");
-const gameOutputContainer = document.getElementById("game-output");
 
-//gör att "manustext" blir återanvändbar, utifrån scen-id
+//gör att "manustext" blir återanvändbar utifrån scen-id
 // setInnerHTML Uppdaterar innerHTML för ett element.
 function setInnerHTML(elementId, content) {
   const element = document.getElementById(elementId);
@@ -74,10 +82,8 @@ function setInnerHTML(elementId, content) {
 }
 
 //Uppdaterar ruta i headern med spelarens aktuella namn och level
-//visas först när spelaren angett namn
-function renderPlayerStats() {
-  const statsContainer = document.getElementById("player-stats");
-
+//Rutan visas först när spelaren angett namn
+function fillPlayerStats() {
   if (playerName && playerName.length > 0) {
     const statsHTML = `
             <div class="player-stats-box">
@@ -88,8 +94,8 @@ function renderPlayerStats() {
   }
 }
 
-//setupEventListeners skapa knappar (lyssnare) efter att en scen laddas
-function setupEventListeners() {
+//setEventListeners = skapa knappar (lyssnare) efter att en scen laddas
+function setEventListeners() {
   if (currentScene === '1.2') {
     const continueBtn = document.getElementById('continueBtn');
     if (continueBtn) {
@@ -100,15 +106,17 @@ function setupEventListeners() {
   }
 }
 
-//updateScene Laddar ny scen baserat på data från gameScenes.
+//updateScene driver spelet framåt, laddar nya scener ur  manuset baserat på data från gameScenes.
+//via sceneData hämtas innehållet (i framtiden ur separat fil, nu från högre upp)
 function updateScene(sceneId) {
   const sceneData = gameScenes[sceneId];
   if (!sceneData) return; // Avbryt om scenen inte finns
-  currentScene = sceneId; // Uppdatera var i spelet man är
+  currentScene = sceneId; // globala variabeln som noterar var i spelet ngn är
 
-  setInnerHTML('stage-title', sceneData.h2); //rubrik
+  //uppdatera rubrik till aktuell scen
+  setInnerHTML('stage-title', sceneData.h2);
 
-  //oraklets ruta
+  //oraklets ruta. ska den visas y/n och vad ska den innehålla?
   const oracleBox = document.querySelector('.oracle-box');
   oracleBox.style.display = sceneData.showOracle ? 'block' : 'none';
   if (sceneData.showOracle) {
@@ -116,19 +124,20 @@ function updateScene(sceneId) {
     setInnerHTML('oracle-text', `<img src="img/witch.png" alt="The Oracle" class="large-icon">` + textContent);
   }
 
-  // generera scenens innehåll och ev val
-  let dynamicContent = '';
+  // generera scenens huvudinnehåll och nya ev val via genDynCont, generateDynamicContent
+  let genDynCont = '';
   if (sceneData.text) {
-    dynamicContent += sceneData.text(playerName, playerAge);
+    genDynCont += sceneData.text(playerName, playerAge);
   }
   if (sceneData.inputHTML) {
-    dynamicContent += sceneData.inputHTML;
+    genDynCont += sceneData.inputHTML;
   }
 
-  setInnerHTML('game-output', dynamicContent);
+  //skriv ut allt innehåll enligt manus (nytt orakel, ny huvudscen, ev nya formulär, ny knapp)
+  setInnerHTML('game-output', genDynCont);
   setInnerHTML('input-player', '');
-  renderPlayerStats();
-  setupEventListeners();
+  fillPlayerStats();
+  setEventListeners();
 }
 
 // stoppa att sidan laddas innan formuläret redo
@@ -144,6 +153,7 @@ setupForm.addEventListener("submit", function(event) {
     return;
   }
 
+  //inbyggd funktion isNaN = is Not a Number
   if (isNaN(playerAge) || playerAge < 1 || playerAge > 999) {
     alert("Please enter a valid age (1-999)");
     return;
